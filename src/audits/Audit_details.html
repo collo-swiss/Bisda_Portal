@@ -1,0 +1,135 @@
+<div class="container-fluid page-content">
+    <div class="row text-center">
+        <div class="col-xl-3 col-sm-6">
+            <div class="card-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt color-warning">
+                    <icon name="comments-o" aria-hidden="true"></icon>
+                </span>
+                <div class="box-info">
+                    <p class="box-num">
+                        5 <span class="size-h4"></span>
+                    </p>
+                    <p class="text-muted">Old Responses</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+            <div class="card-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt color-primary">
+                    <icon name="paper-plane-o"></icon>
+                </span>
+                <div class="box-info">
+                    <p class="box-num">
+                        5 <span class="size-h4"></span>
+                    </p>
+                    <p class="text-muted">Pending Invites</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+            <div class="card-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt color-info">
+                    <icon name="users"></icon>
+                </span>
+                <div class="box-info">
+                    <p class="box-num">
+                        4 <span class="size-h4"></span>
+                    </p>
+                    <p class="text-muted">Active Users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+            <div class="card-box">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt color-default">
+                    <icon name="podcast"></icon>
+                </span>
+                <div class="box-info">
+                    <p class="box-num">
+                        2 <span class="size-h4"></span>
+                    </p>
+                    <p class="text-muted">Active Polls</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="box box-default">
+                <div class="box-body">
+                    <div class="icon-box">
+                        <div class="ibox-icon">
+                            <!-- <a href="javascript:;"> -->
+                                <icon name="user-plus" class="fa-lg"></icon>
+                            <!-- </a> -->
+                        </div>
+                        <h3>0 of 5 Users Responded</h3>
+                        <p>
+                            A respresentative number of users ensures you get a wholistic view of your company's progress
+                        </p>
+                        <div class="divider-sm">
+                            <button type="button" class="ant-btn ant-btn-primary ant-btn-background-ghost">
+                                <span>Invite More Users</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-default">
+                <div class="box-heading">
+                    <!-- {{question.company}} Audit Summary -->
+                    Company Audit Summary
+                    <span class="box-heading-btns">
+                        <a class="ant-btn ant-btn-primary ant-btn-background-ghost"
+                        ui-sref="mammothQuestions.Report({question_id:question.id})">
+                            <span>Full Report</span>
+                        </a>
+                    </span>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <echart :config="chart.config" :options="chart.option" style="height:300;width:500"></echart>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul class="ant-timeline">
+                                <li class="ant-timeline-item">
+                                    <div class="ant-timeline-item-tail"></div>
+                                    <div class="ant-timeline-item-head ant-timeline-item-head-green"></div>
+                                    <div class="ant-timeline-item-content">
+                                        Understand - Excellent
+                                        <p>Industry Average - 80%</p>
+                                    </div>
+                                </li>
+                                <li class="ant-timeline-item">
+                                    <div class="ant-timeline-item-tail"></div>
+                                    <div class="ant-timeline-item-head ant-timeline-item-head-blue"></div>
+                                    <div class="ant-timeline-item-content">
+                                        Deliver - Above industry benchmark
+                                        <p>Benchmark - 60%</p>
+                                    </div>
+                                </li>
+                                <li class="ant-timeline-item ant-timeline-item-last">
+                                    <div class="ant-timeline-item-tail"></div>
+                                    <div class="ant-timeline-item-head ant-timeline-item-head-red"></div>
+                                    <div class="ant-timeline-item-content">
+                                        Own - Lower than country average                                        
+                                        <p>Country Average - 73%</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+       

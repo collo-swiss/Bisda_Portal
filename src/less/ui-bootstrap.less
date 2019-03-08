@@ -1,0 +1,40 @@
+/*
+* Ui-bootstrap - v2.1.2
+* Authour - Mesongo Collins
+* Started - 2016-22-08 20:14
+* Copyright (c) 2015 Mesozi Systems
+* Licensed MIT License
+*/
+
+/* ---------------------------------------------------------------------
+UI-Bootstrap Overriding
+------------------------------------------------------------------------*/
+/* Datepicker pop-up */
+.uib-datepicker-popup {
+    background: @page-bg;
+}
+.uib-datepicker-popup .uib-datepicker {
+    margin: 10px;
+}
+.uib-datepicker-popup .uib-datepicker th {
+    padding-top: 4px;
+}
+.uib-datepicker-popup .uib-datepicker td.uib-day  {
+    padding: 2px;
+}
+
+.uib-datepicker-popup .uib-datepicker .btn-info .text-info  {
+    color: @alt-font-color !important;
+}
+
+/* Typeahead */
+[uib-typeahead-popup].dropdown-menu {
+    width: 100%;
+    margin: 4px 0 0 0;
+}
+[uib-typeahead-popup].dropdown-menu > .active > a,
+[uib-typeahead-popup].dropdown-menu > .active > a:hover,
+[uib-typeahead-popup].dropdown-menu > .active > a:focus {
+    color: @font-color;
+    background-color: @page-bg;
+}

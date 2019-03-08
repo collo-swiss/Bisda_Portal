@@ -1,0 +1,47 @@
+<div class="cotainer-fluild">
+    <article class="article">
+        <div class="box box-default no-margin">
+            <div class="box-body">
+                <section class="question" v-bind:class="{'answered': answered}">
+                    <div class="question-content">
+                        <h1 class="question-title">
+                            {{question.name}}
+                        </h1>
+                        <div class="question-answers" ng-include="answer_template" onload="answersLoaded()">
+                        </div>
+                        <div class="answer-comment-container" v-show="answered||answer.comment">
+                            <p class="answer-comment-text" v-bind:class="{'commented': answer.comment}">
+                                Tell us more about your choice above(or add a general comment about the question)
+                            </p>
+                            <textarea name="comment" rows="4" class="answer-comment-textarea" v-model="answer.comment"></textarea>
+                            <button type="button" class="ant-btn ant-btn-default ant-btn-lg answer-comment-btn" v-on:click="saveQuestionAnswer()">
+                                <span>
+                                    <icon name="save"></icon> Save Comment
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-nav ant-btn-group-lg">
+                        <button type="button" class="ant-btn ant-btn-default pull-left" v-on:click="previousQuestion()" v-bind:disabled="previous_question_id==-1">
+                            <span>
+                                <icon name="backward"></icon> Previous
+                            </span>
+                        </button>
+
+                        <button type="button" class="ant-btn ant-btn-primary pull-right" v-on:click="nextQuestion()" ng-hide="next_question_id==-1">
+                            <span>Next
+                                <icon name="forward"></icon>
+                            </span>
+                        </button>
+
+                        <button type="button" class="ant-btn ant-btn-success pull-right" v-on:click="submitAudit()" v-show="next_question_id==-1">
+                            <span>Finish
+                                <icon name="check-circle-o"></icon>
+                            </span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </article>
+</div>

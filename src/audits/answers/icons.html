@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="answer-box-container" ng-repeat="choice in choices | orderBy :'score'" ng-style="choice_styles" ng-click="setQuestionAnswer(question.id, choice.id)"
+        uib-popover="Click to confirm" popover-trigger="'mouseenter'">
+        <div class="answer-box answer-box-center" ng-class="{ 'active': isQuestionAnswer(question.id, choice.id) }">
+            <div class="answer-box-icon">
+                <a href="javascript:;">
+                    <img src="assets/images/answer-icons/icon1.png" alt="Not at all">
+                </a>
+            </div>
+            <h3>{{choice.name}}</h3>
+        </div>
+    </div>
+</div>

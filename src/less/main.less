@@ -1,0 +1,97 @@
+/**
+ * This is the main application stylesheet. It should include or import all
+ * stylesheets used throughout the application as this is the only stylesheet in
+ * the Grunt configuration that is automatically processed.
+ */
+
+/**
+ * We import Font-awsome LESS files
+ */
+
+// @import "../../node_modules/fontawesome/less/font-awesome.less";
+
+
+/*
+* Import bootstrap
+*/
+@import "../../node_modules/bootstrap-less/bootstrap/bootstrap.less";
+
+/**
+ * This is our main variables file. We must include it last so we can overwrite any variable
+ * definitions in our imported stylesheets.
+ */
+
+@import "variables.less";
+
+/*
+* Customized styling for overiding bootstrap-table.css
+*/
+@import "tables.less";
+
+/*
+* Our the theme styling file for this project
+*/
+@import "theme.less";
+
+/*
+* Our media dependent styling file for this project
+*/
+@import "media.less";
+
+/*
+* Our print media styling file for this project
+*/
+@import "print.less";
+
+/*
+* Our customization of mCustomScrollbar less
+*/
+@import "icheck.less";
+
+/*
+* Our customization of mCustomScrollbar less
+*/
+@import "scrollbar.less";
+
+/*
+* Our loading bar less
+*/
+@import "loading-bar.less";
+
+/*
+* Our date-range less
+*/
+@import "date-range.less";
+
+/*
+* Our multi-select less
+*/
+@import "multi-select.less";
+
+/*
+* Our form-material less
+*/
+@import "bootstrap4.less";
+
+/*
+* Overides ui-boostrap styling
+*/
+@import "ui-bootstrap.less";
+
+/*
+* Overides ui-boostrap styling
+*/
+@import "modal.less";
+
+/**
+ * Now that all app-wide styles have been applied, we can load the styles for
+ * all the submodules and components we are using.
+
+@import "../app/site/site.less";
+@import "../app/auth/auth.less";
+@import "../app/user/user.less";
+@import "../app/account/account.less";
+*/
+
+// @import "../app/auth/auth.less";
+// @import "../app/audits/audits.less";

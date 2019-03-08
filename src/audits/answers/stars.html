@@ -1,0 +1,17 @@
+<div class="stars">
+    <ul class="rate">
+        <li class="rate-star" ng-repeat="choice in choices track by $index" ng-mouseover="setRate($index+1)" ng-blur="setRate($index+1)"
+            ng-click="setRate($index+1); setQuestionAnswer(question.id, choice.id)" ng-class="(rate>=$index+1) ? 'active':''"
+            uib-popover="Click to confirm" popover-trigger="'mouseenter'">
+            <div class="rate-star-first">}
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="rate-star-second">
+                <i class="fa fa-star"></i>
+            </div>
+        </li>
+    </ul>
+    <span class="rate-text">
+        {{rate}} stars
+    </span>
+</div>

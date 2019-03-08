@@ -1,0 +1,47 @@
+<!-- <div id="app"> -->
+  <div class="container">
+    <!--UPLOAD-->
+    <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
+      <h1>Upload Data</h1>
+      <div class="dropbox">
+        <input type="file" :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
+          class="input-file">
+          <p v-if="isInitial">
+            Drag your file(s) here to begin<br> or click to browse
+          </p>
+          <p v-if="isSaving">
+            Uploading  file...
+          </p>
+      </div>
+    </form>
+    <!-- <form>
+      <div class="large-12 medium-12 small-12 cell">
+        <label>File
+          <input type="file" class="input-file" ref="file" v-on:change="filesChange($event.target.name, $event.target.files)"/>
+        </label>
+        <button v-on:click="submitFile()">Submit</button>
+      </div>
+    </form> -->
+
+    <!--SUCCESS-->
+    <div v-if="isSuccess">
+      <h2>Uploaded file successfully.</h2>
+      <p>
+        <a href="javascript:void(0)" @click="reset()">Upload again</a>
+      </p>
+      <ul class="list-unstyled">
+        <li v-for="item in uploadedFiles">
+          <img :src="item.url" class="img-responsive img-thumbnail" :alt="item.originalName">
+        </li>
+      </ul>
+    </div>
+    <!--FAILED-->
+    <div v-if="isFailed">
+      <h2>Upload failed.</h2>
+      <p>
+        <a href="javascript:void(0)" @click="reset()">Try again</a>
+      </p>
+      <pre>{{ uploadError }}</pre>
+    </div>
+  </div>
+<!-- </div> -->

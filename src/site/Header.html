@@ -1,0 +1,50 @@
+<div class="app-header ant-layout-header">
+                            <div class="app-header-inner bg-color-danger">
+                                <div class="header-left">
+                                    <ul class="header-list list-unstyled list-inline">
+                                        <li class="list-inline-item hidden-md-down">
+                                            <icon name="bars" class="header-icon app-sidebar-toggler"></icon>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <icon name="caret-square-o-left" class="header-icon app-sidebar-toggler"></icon>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="header-right">
+                                            <div class="account-dropdown">
+                                                <div class="user_name">
+                                                    <icon name="user" class="fa-lg"></icon>
+                                                    <a class="btn" >
+                                                        <!-- <span> Collins Githiari </span> -->
+                                                        <span> {{ user.full_name }} </span>
+                                                    </a><span class="divider-h"></span>
+                                                    <router-link to="/logout" class="drop-link">
+                                                        <span class="nav-text"> Logout </span>
+                                                    </router-link>
+                                                    <!-- <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
+                                                        <icon name="caret-down" class="fa-lg"></icon>
+                                                    </a> -->
+                                                </div>  
+                                                <!-- <div id="dropdown">
+                                                    <div v-if="showDropDown">
+                                                        <ul class="menu list pl0 pa0 ma0 logout-menu">
+                                                            <li id="drop-item">
+                                                                <router-link to="#" class="drop-link">
+                                                                    <icon name="gear" class="fa-lg"></icon>
+                                                                    <span class="nav-text"> Account </span>
+                                                                </router-link>
+                                                            </li>
+                                                            <li id="drop-item">
+                                                                <router-link to="/logout" class="drop-link">
+                                                                    <icon name="user" class="fa-lg"></icon>
+                                                                    <span class="nav-text"> Logout </span>
+                                                                </router-link>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

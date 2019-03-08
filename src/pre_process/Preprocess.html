@@ -1,0 +1,112 @@
+<div class="pre-process">
+  <div class="row">
+    <div class="col-md-6">
+      <div class=" box box-default">
+        <div class="box-heading">
+          <span>Distinct Rows</span>
+        </div>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-8">
+              <p class="box-num">
+                  {{ distinct_rows.total_count}} Total Rows<span class="size-h4"></span>
+              </p>
+              <p class="box-num">
+                  {{ distinct_rows.distinct_rows}} Distinct Rows<span class="size-h4"></span>
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p> {{ distinct_rows_percentage }} % </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class=" box box-default">
+        <div class="box-heading">
+          <span>Duplicate Ids</span>
+        </div>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-8">
+              <p class="box-num">
+                  {{ distinct_ids.total_ids}} Total IDs<span class="size-h4"></span>
+              </p>
+              <p class="box-num">
+                  {{ distinct_ids.distinct_ids}} Distinct IDs<span class="size-h4"></span>
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p> {{ distinct_ids_percentage }} % </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Missing Entries Table -->
+    <div class=" box box-default">
+      <div class="box-heading">
+        <span>Missing Observations</span>
+      </div>
+      <div class="box-body">
+      <div class="ant-table-wrapper project-table">
+        <div class="ant-spin-nested-loading">
+            <div class="ant-spin-container">
+                <div class="ant-table ant-table-large ant-table-scroll-position-left">
+                    <div class="ant-table-content">
+                        <div class="ant-table-body">
+                            <table id="projects-table">
+                                <thead class="ant-table-thead">
+                                    <tr>
+                                        <th class="" v-for="header in this.columns">
+                                            <span>{{ header }}</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="ant-table-tbody">
+                                    <tr class="ant-table-row ant-table-row-level-0"><td class="" v-for="data in this.tableData">
+                                            <div class="ant-progress ant-progress-line ant-progress-type-primary">
+                                                <div>
+                                                    {{ data }}
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Chart -->
+      <div class=" box box-default">
+        <div class="box-heading">
+          <span>Data Reports</span>
+        </div>
+        <div class="box-body">
+          <echart :config="chart.config" :options="chart.option" style="height:300;width:500"></echart>
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-box">
+        <span class="btn-icon btn-icon-round btn-icon-lg-alt color-warning">
+            <icon name="gears" aria-hidden="true"></icon>
+        </span>
+        <div class="box-info">
+            <span>Here will be all the Data</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

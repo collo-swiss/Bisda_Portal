@@ -1,0 +1,103 @@
+<div class="cotainer-fluild p-4">
+  <div class="ui-animate">
+      <div style="opacity: 1; transform: translate(0px, 0px);">
+          <article class="article">
+              <div class="box box-default">
+                    <div class="box-heading">
+                        <h1>Create Project</h1>
+                    </div>
+                  <div class="box-body demo-style-steps">
+                    <div class="steps-content">
+                          <form name="createProjectForm" class="ant-form ant-form-horizontal">
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-col-4 ant-form-item-label">
+                                      <label title="Company Name">Company Name</label>
+                                  </div>
+                                  <div class="ant-col-14 ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control ">
+                                          <input type="text" name="company" class="ant-input ant-input-lg"
+                                          v-model="project.company" placeholder="Company Name" required>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-col-4 ant-form-item-label">
+                                      <label title="Industry">Industry</label>
+                                  </div>
+                                  <div class="ant-col-14 ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control ">
+                                          <input type="text" name="industry" class="ant-input ant-input-lg"
+                                          v-model="project.industry" placeholder="Industry" required>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-col-4 ant-form-item-label">
+                                      <label title="Primary Email">Primary Email</label>
+                                  </div>
+                                  <div class="ant-col-14 ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control ">
+                                          <input type="email" name="email" class="ant-input ant-input-lg"
+                                          v-model="project.email" placeholder="Primary Email" required>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-col-4 ant-form-item-label">
+                                      <label title="Primary Phone">Primary Phone</label>
+                                  </div>
+                                  <div class="ant-col-14 ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control ">
+                                          <input type="text" name="phone_number" class="ant-input ant-input-lg"
+                                          v-model="project.phone_number" placeholder="Primary Phone" required>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-col-4 ant-form-item-label">
+                                      <label title="Website">Website</label>
+                                  </div>
+                                  <div class="ant-col-14 ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control ">
+                                          <input type="url" name="website" class="ant-input ant-input-lg"
+                                          v-model="project.website" placeholder="Website">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-col-4 ant-form-item-label">
+                                      <label title="Physical Address">Physical Address</label>
+                                  </div>
+                                  <div class="ant-col-14 ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control ">
+                                          <textarea name="physical_address" class="ant-input ant-input-lg"
+                                          v-model="project.physical_address" placeholder="Physical Address">
+                                          </textarea> 
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                <div class="ant-col-4 ant-form-item-label">
+                                    <label title="Postal Address">Postal Address</label>
+                                </div>
+                                <div class="ant-col-14 ant-form-item-control-wrapper">
+                                    <div class="ant-form-item-control ">
+                                        <textarea name="postal_address" class="ant-input ant-input-lg"
+                                        v-model="project.postal_address" placeholder="Postal Address">
+                                        </textarea> 
+                                    </div>
+                                </div>
+                            </div>
+                          </form>
+                      <div class="steps-action" ui-view="steps-action">
+                          <button type="button" class="ant-btn ant-btn-primary pull-right" v-on:click.prevent="createProject()">
+                              <span><icon name="save"></icon> Save to continue </span>
+                          </button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </article>
+      </div>
+  </div>
+</div>

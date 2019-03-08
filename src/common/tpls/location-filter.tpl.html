@@ -1,0 +1,58 @@
+<li class="list-filter-item"
+ ng-show="current_user.no_of_supervisees || current_user.type==='ADMIN'">
+    <div class="list-filter-item-body">
+        <div class="trigger-full">
+            <div class="list-filter-item-label">
+                Region
+            </div>
+            <span class="list-filter-item-content">
+                <input type="text" name="region" 
+                class="form-control" placeholder="Select region"
+                ng-disabled="false" ng-model="region.name"
+                typeahead-min-length="0" typeahead-on-select="setFilterRegion($item)"
+                uib-typeahead="region.name for region in getRegions($viewValue)"
+                typeahead-loading="loading_regions" typeahead-no-results="no_regions">
+                <i ng-show="loading_regions" class="fa fa-spin fa-refresh"></i>
+                <div class="add-item" ng-show="no_regions">
+                    <span class="add-item-prompt">
+                        Region doesn't exist! Try again
+                    </span>
+                </div>
+            </span>
+            <div class="list-filter-item-label">
+                Branch
+            </div>
+            <span class="list-filter-item-content">
+                <input type="text" name="area" 
+                class="form-control" placeholder="Select branch"
+                ng-disabled="!region.id" ng-model="area.name"
+                typeahead-min-length="0" typeahead-on-select="setFilterArea($item)"
+                uib-typeahead="area.name for area in getAreas(region.id, $viewValue)"
+                typeahead-loading="loading_areas" typeahead-no-results="no_areas">
+                <i ng-show="loading_areas" class="fa fa-spin fa-refresh"></i>
+                <div class="add-item" ng-show="no_areas">
+                    <span class="add-item-prompt">
+                        Branch doesn't exist! Try again
+                    </span>
+                </div>
+            </span>
+            <div class="list-filter-item-label">
+                Team
+            </div>
+            <span class="list-filter-item-content">
+                <input type="text" name="team" 
+                class="form-control" placeholder="Select Team"
+                ng-disabled="!area.id" ng-model="team.name"
+                typeahead-min-length="0" typeahead-on-select="setFilterTeam($item)"
+                uib-typeahead="team.name for team in getTeams(area.id, $viewValue)"
+                typeahead-loading="loading_teams" typeahead-no-results="no_teams">
+                <i ng-show="loading_teams" class="fa fa-spin fa-refresh"></i>
+                <div class="add-item" ng-show="no_teams">
+                    <span class="add-item-prompt">
+                        Team doesn't exist! Try again
+                    </span>
+                </div>
+            </span>
+        </div>
+    </div>
+</li>

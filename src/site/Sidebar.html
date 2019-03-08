@@ -1,0 +1,94 @@
+<div class="sidebar">
+    <div>
+        <section class="sidebar-header">
+            <a class="brand">
+                <img class="logo" src="../assets/images/logo2.png">
+            </a>
+        </section>
+        <div class="slimScrollDiv">
+            <div class="sidebar-content" style="height: calc(100vh - 104px);">
+                <ul class="ant-menu ant-menu-inline  ant-menu-light ant-menu-root" role="menu" aria-activedescendant="" tabindex="0">
+                    <li class="ant-menu-item" >
+                        <router-link to="/">
+                            <icon name="home" class="fa-lg"> </icon>
+                            <span class="nav-text"> Dashboard </span>
+                        </router-link>
+                    </li>
+                    <li class="ant-menu-item dropdown">
+                        <a href="#" v-on:click.prevent="showDropDown1=!showDropDown1">
+                            <icon name="gears" class="fa-lg"></icon>
+                            <span class="nav-text"> Pre-Process</span>
+                        </a>
+                    </li>
+                    <li id="dropdown">
+                        <div>
+                            <div v-if="showDropDown1">
+                                <ul class="menu list pl0 pa0 ma0">
+                                    <li>
+                                        <router-link to="/load" class="drop-link">
+                                            <icon name="hourglass" ></icon>
+                                            <span class="nav-text"> Load </span>
+                                        </router-link>
+                                    </li>
+                                    <li>
+                                        <router-link to="/pre_process" class="drop-link">
+                                            <icon name="gear" ></icon>
+                                            <span class="nav-text"> Process </span>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ant-menu-item">
+                        <router-link to="/projects">
+                            <icon name="bar-chart" class="fa-lg"></icon>
+                            <span class="nav-text"> Sales Predictions </span>
+                        </router-link>
+                    </li>
+                    <li class="ant-menu-item" >
+                        <router-link to="/audits">
+                            <icon name="pie-chart" class="fa-lg"></icon>
+                            <span class="nav-text"> Sales Analysis</span>
+                        </router-link>
+                    </li>
+                    <li class="ant-menu-item dropdown">
+                        <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
+                            <icon name="lock" class="fa-lg"></icon>
+                            <span class="nav-text"> Admin</span>
+                        </a>
+                    </li>
+                    <li id="dropdown">
+                        <div>
+                            <div v-if="showDropDown">
+                                <ul class="menu list pl0 pa0 ma0">
+                                    <li>
+                                        <router-link to="/projects" class="drop-link">
+                                            <icon name="briefcase" class="fa-lg"></icon>
+                                            <span class="nav-text"> Projects </span>
+                                        </router-link>
+                                    </li>
+                                    <li>
+                                        <router-link to="/users" class="drop-link">
+                                            <icon name="user" class="fa-lg"></icon>
+                                            <span class="nav-text"> Users </span>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-footer">
+        <a href="#">
+            <icon name="question-circle"></icon>
+            <span class="nav-text">
+                <span>Help</span> &amp; <span>Support</span>
+            </span>
+        </a>
+    </div>
+</div>

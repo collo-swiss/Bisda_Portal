@@ -1,0 +1,195 @@
+<div class="container-fluid page-content">
+  <div class="row text-center">
+      <div class="col-xl-3 col-sm-6">
+          <div class="card-box">
+              <span class="btn-icon btn-icon-round btn-icon-lg-alt color-warning">
+                  <icon name="comments-o" aria-hidden="true"></icon>
+              </span>
+              <div class="box-info">
+                  <p class="box-num">
+                      5 <span class="size-h4"></span>
+                  </p>
+                  <p class="text-muted">New Responses</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-3 col-sm-6">
+          <div class="card-box">
+              <span class="btn-icon btn-icon-round btn-icon-lg-alt color-primary">
+                  <icon name="paper-plane-o"></icon>
+              </span>
+              <div class="box-info">
+                  <p class="box-num">
+                      5 <span class="size-h4"></span>
+                  </p>
+                  <p class="text-muted">Pending Invites</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-3 col-sm-6">
+          <div class="card-box">
+              <span class="btn-icon btn-icon-round btn-icon-lg-alt color-info">
+                  <icon name="users"></icon>
+              </span>
+              <div class="box-info">
+                  <p class="box-num">
+                      4 <span class="size-h4"></span>
+                  </p>
+                  <p class="text-muted">Active Users</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-3 col-sm-6">
+          <div class="card-box">
+              <span class="btn-icon btn-icon-round btn-icon-lg-alt color-default">
+                  <icon name="podcast"></icon>
+              </span>
+              <div class="box-info">
+                  <p class="box-num">
+                      2 <span class="size-h4"></span>
+                  </p>
+                  <p class="text-muted">Active Polls</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12">
+          <div class="box box-default">
+              <div class="box-heading">
+                  <!-- {{question.company}} Audit Summary -->
+                  Company Data Summary
+                  <span class="box-heading-btns">
+                      <a class="ant-btn ant-btn-primary ant-btn-background-ghost"
+                      ui-sref="mammothQuestions.Report({question_id:question.id})">
+                          <span>Full Report</span>
+                      </a>
+                  </span>
+              </div>
+              <div class="box-body">
+                  <div class="row">
+                        <div class="col-sm-8">
+                            <echart :config="chart.config" :options="chart.option" style="height:300;width:500"></echart>
+                        </div>
+                      <div class="col-sm-4">
+                          <ul class="ant-timeline">
+                              <li class="ant-timeline-item">
+                                  <div class="ant-timeline-item-tail"></div>
+                                  <div class="ant-timeline-item-head ant-timeline-item-head-green"></div>
+                                  <div class="ant-timeline-item-content">
+                                      Evening Sales
+                                      <p>Industry Average - 80%</p>
+                                  </div>
+                              </li>
+                              <li class="ant-timeline-item">
+                                  <div class="ant-timeline-item-tail"></div>
+                                  <div class="ant-timeline-item-head ant-timeline-item-head-blue"></div>
+                                  <div class="ant-timeline-item-content">
+                                      Afternon Sales
+                                      <p>Benchmark - 60%</p>
+                                  </div>
+                              </li>
+                              <li class="ant-timeline-item ant-timeline-item-last">
+                                  <div class="ant-timeline-item-tail"></div>
+                                  <div class="ant-timeline-item-head ant-timeline-item-head-red"></div>
+                                  <div class="ant-timeline-item-content">
+                                      Morning Sales                                        
+                                      <p>Country Average - 73%</p>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- List of All Audits -->
+  <div class="row">
+        <div class="col-xs-12 my-2">
+            <h1 class="heading">
+                <span class="heading-text"> Reports </span>
+                <span class="heading-btns">
+                    <a class="ant-btn ant-btn-primary pull-right">
+                        <span>+ New Report</span>
+                    </a>
+                </span>
+            </h1>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="ant-table-wrapper project-table">
+                <div class="ant-spin-nested-loading">
+                    <div class="ant-spin-container">
+                        <div class="ant-table ant-table-large ant-table-scroll-position-left">
+                            <div class="ant-table-content">
+                                <div class="ant-table-body">
+                                    <table id="audits-table">
+                                        <thead class="ant-table-thead">
+                                            <tr>
+                                                <!-- <th class="">
+                                                    <span>#</span>
+                                                </th> -->
+                                                <th class="">
+                                                    <span>Name</span>
+                                                </th>
+                                                <th class="">
+                                                    <span>Start Date</span>
+                                                </th>
+                                                <th class="">
+                                                    <span>End Date</span>
+                                                </th>
+                                                <th class="">
+                                                    <span>Status</span>
+                                                </th>
+                                                <th class="">
+                                                    <span>Created By</span>
+                                                </th>
+                                                <th class="">
+                                                    <span>Last Sent</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="ant-table-tbody">
+                                            <tr class="ant-table-row ant-table-row-level-0"
+                                              v-for="(audit, index) in audits">
+                                                <!-- <td class="">
+                                                    <span class="ant-table-row-indent indent-level-0" style="padding-left: 0px;">                       
+                                                    </span> {{ index +1 }}
+                                                </td> -->
+                                                <td class="">
+                                                    {{audit.name}}
+                                                </td>
+                                                <td class="">
+                                                    {{audit.start_date}}
+                                                </td>
+                                                <td class="">
+                                                    {{audit.end_date}}
+                                                </td>
+                                                <td class="">
+                                                    <div v-show="true" class="ant-tag ant-tag-has-color" v-bind:class="{'ant-tag-type-info': audit.status=='PROGRESSING', 'ant-tag-type-success': audit.status=='COMPLETED', 'ant-tag-type-danger': audit.status=='CREATED'}">
+                                                        {{audit.status}}
+                                                    </div>
+                                                </td>
+                                                <td class="">
+                                                    {{ audit.created_by.full_name }}
+                                                </td>
+                                                <td class="">
+                                                    {{audit.last_sent}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+     

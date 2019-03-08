@@ -1,0 +1,26 @@
+<li class="list-filter-item">
+    <div class="list-filter-item-body">
+        <div class="trigger-full">
+            <div class="list-filter-item-label">
+                From
+            </div>
+            <span class="list-filter-item-content">
+                <input type="datetime" name="created_after" class="form-control"
+                uib-datepicker-popup="dd-MM-yyyy" show-button-bar="false"
+                datepicker-options="created_after_options" is-open="created_after_opened"
+                ng-focus="created_after_opened=true" ng-change="setCreatedAfterFilter()"
+                ng-model="updated_after" placeholder="From">
+            </span>
+            <div class="list-filter-item-label">
+                To
+            </div>
+            <span class="list-filter-item-content">
+                <input type="datetime" name="created_before" class="form-control"
+                uib-datepicker-popup="dd-MM-yyyy" show-button-bar="false"
+                datepicker-options="created_before_options" is-open="created_before_opened"
+                ng-focus="created_before_opened=true" ng-change="setCreatedBeforeFilter()"
+                ng-model="updated_before" placeholder="To">
+            </span>
+        </div>
+    </div>
+</li>

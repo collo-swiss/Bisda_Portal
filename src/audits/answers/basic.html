@@ -1,0 +1,15 @@
+<div class="likert likert-horizontal likert-label-horizontal">
+    <div class="likert-item" ng-repeat="choice in choices | orderBy :'score'" ng-click="setQuestionAnswer(question.id, choice.id)"
+        ng-class="{ 'active': isQuestionAnswer(question.id, choice.id) }" uib-popover="Click to confirm" popover-trigger="'mouseenter'">
+        <div class="likert-step">
+            <div class="likert-head">
+                <div class="likert-head-inner">
+                    <span class="likert-icon">{{$index+1}}</span>
+                </div>
+            </div>
+            <div class="likert-main">
+                <div class="likert-title">{{ choice.name }}</div>
+            </div>
+        </div>
+    </div>
+</div>

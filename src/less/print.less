@@ -1,0 +1,34 @@
+/* -------------------------------------------------------------------------------------------
+* Print Media CSS
+--------------------------------------------------------------------------------------------*/
+
+@media print {
+    body * {
+        font-size: 12pt;
+        line-height: 1.3;
+        visibility: hidden;
+        overflow-y:hidden !important;
+    }
+
+    @page {
+        margin: 0.2cm;
+    }
+
+    .page-container .page-content {
+        margin-left: 0px;
+    }
+
+    .printable, .printable * {
+        visibility: visible;
+    }
+
+    .printable {
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+    
+    .printable .table-invoice {
+        page-break-inside: avoid;
+    }
+}

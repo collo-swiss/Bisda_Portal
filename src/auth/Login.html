@@ -1,0 +1,73 @@
+<!-- LOGIN FORM -->
+<div class="page-login">
+  <div class="main-body">
+      <div class="ui-animate">
+          <div class="" style="opacity: 1; transform: translate(0px, 0px);">
+              <div class="body-inner">
+                  <div class="box box-default">
+                      <div class="box-body">
+                          <section class="logo text-center">
+                              <h1>
+                                <img src="../assets/images/logo_1.png" alt="Bisda Solutions" style="width: 50%; height: 50%;">
+                              </h1>
+                          </section>
+                          <form name="userLoginForm" class="ant-form ant-form-horizontal login-form">
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-form-item-control-wrapper">
+                                        <p class="help-block"
+                                        v-if="error">
+                                                Invalid Credentials. Try Again.
+                                            </p>
+                                      <div class="ant-form-item-control ">
+                                          <span class="ant-input-affix-wrapper">
+                                              <span class="ant-input-prefix">
+                                                  <icon name="user"></icon>
+                                              </span>
+                                              <input type="text" name="username" class="ant-input ant-input-lg"
+                                              placeholder="Email Address" v-model="user.username" required>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control ">
+                                          <span class="ant-input-affix-wrapper">
+                                              <span class="ant-input-prefix">
+                                                  <icon name="key" style="font-size: 13px;"></icon>
+                                              </span>
+                                              <input type="password" name="password" class="ant-input ant-input-lg"
+                                              placeholder="Password" v-model="user.password" required>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="ant-row ant-form-item">
+                                  <div class="ant-form-item-control-wrapper">
+                                      <div class="ant-form-item-control has-success">
+                                          <label class="ant-checkbox-wrapper">
+                                          <span class="ant-checkbox ant-checkbox-checked">
+                                            <input type="checkbox" class="ant-checkbox-input">
+                                            <span class="ant-checkbox-inner"></span></span>
+                                            <span>Remember me </span>
+                                          </label>
+                                          <button class="ant-btn ant-btn-primary ant-btn-lg submit-button"
+                                              v-on:click.prevent="loginUser">
+                                              Log in
+                                        </button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="additional-info">
+                      <a href="sign-up.html">Sign up</a><span class="divider-h"></span>
+                      <a href="forgot-password.html">Forgot your password?</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- / LOGIN FORM -->

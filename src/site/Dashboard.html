@@ -1,0 +1,137 @@
+<div class="container-fluid page-dashboard">
+    <div class='dashboard'>
+        <div class="row text-center">
+            <div class="col-xl-3 col-sm-6">
+                <div class="card-box">
+                    <span class="btn-icon btn-icon-round btn-icon-lg-alt color-warning">
+                        <icon name="briefcase" aria-hidden="true"></icon>
+                    </span>
+                    <div class="box-info">
+                        <p class="box-num">
+                            {{projects_count}} 
+                            <span class="size-h4"></span>
+                        </p>
+                        <p class="text-muted">Projects </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card-box">
+                    <span class="btn-icon btn-icon-round btn-icon-lg-alt color-primary">
+                        <icon name="pie-chart"></icon>
+                    </span>
+                    <div class="box-info">
+                        <p class="box-num">
+                            {{ projects_count - 2 }} <span class="size-h4"></span>
+                        </p>
+                        <p class="text-muted">Analyses Done</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card-box">
+                    <span class="btn-icon btn-icon-round btn-icon-lg-alt color-default">
+                        <icon name="podcast"></icon>
+                    </span>
+                    <div class="box-info">
+                        <p class="box-num">
+                            {{ projects_count - 2 }} <span class="size-h4"></span>
+                        </p>
+                        <p class="text-muted">Reports Generated</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card-box">
+                    <span class="btn-icon btn-icon-round btn-icon-lg-alt color-success">
+                        <icon name="users"></icon>
+                    </span>
+                    <div class="box-info">
+                        <p class="box-num">
+                            {{ respondents_count}} <span class="size-h4"></span>
+                        </p>
+                        <p class="text-muted">Participants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xs-12 my-2">
+                <h1 class="heading">
+                    <span class="heading-text"> Projects </span> 
+                    <div class="ant-btn ant-btn-primary pull-right">
+                        <router-link to="/projects">
+                            <span class="nav-text">+ New Project</span>
+                        </router-link>
+                    </div>
+                </h1>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="ant-table-wrapper project-table">
+                    <div class="ant-spin-nested-loading">
+                        <div class="ant-spin-container">
+                            <div class="ant-table ant-table-large ant-table-scroll-position-left">
+                                <div class="ant-table-content">
+                                    <div class="ant-table-body">
+                                        <table id="projects-table">
+                                            <thead class="ant-table-thead">
+                                                <tr>
+                                                    <th class="">
+                                                        <span>#</span>
+                                                    </th>
+                                                    <th class="">
+                                                        <span>Company</span>
+                                                    </th>
+                                                    <th class="">
+                                                        <span>Status</span>
+                                                    </th>
+                                                    <th class="">
+                                                        <span>Primary Email</span>
+                                                    </th>
+                                                    <th class="">
+                                                        <span>Date started</span>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="ant-table-tbody">
+                                                <tr class="ant-table-row ant-table-row-level-0"
+                                                  v-for="(project, index) in projects">
+                                                    <td class="">
+                                                        <span class="ant-table-row-indent indent-level-0" style="padding-left: 0px;">                       
+                                                        </span> {{ index +1 }}
+                                                    </td>
+                                                    <td class="">
+                                                        {{project.company}}
+                                                    </td>
+                                                    <td class="">
+                                                        <div v-show="true" class="ant-tag ant-tag-has-color" v-bind:class="{'ant-tag-type-info': project.active, 'ant-tag-type-completed':'!project.active'}">
+                                                            <span class="ant-tag-text" v-if="project.active">In Progress</span>
+                                                            <span class="ant-tag-text" v-else="!project.active">Completed</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="">
+                                                        {{project.email}}
+                                                    </td>
+                                                    <td class="">
+                                                        <div class="ant-progress ant-progress-line ant-progress-type-primary">
+                                                            <div>
+                                                                <!-- {{project.created_at | date:'dd, MMMM y'}} -->
+                                                                {{project.created_at }}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

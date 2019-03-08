@@ -1,0 +1,21 @@
+<!-- Start likert dots -->
+<div class="likert-dots-container">
+    <div class="likert-dot-container" ng-repeat="choice in choices | orderBy :'score'" ng-style="choice_styles" ng-click="setQuestionAnswer(question.id, choice.id)"
+        ng-class="{ 'active': isQuestionAnswer(question.id, choice.id) }" uib-popover="Click to confirm" popover-trigger="'mouseenter'">
+        <div class="likert-dot">
+            <div class="dot-target-container">
+                <div class="dot-target">
+                    <div class="dot-target-content">
+                        <div class="target-hovered"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dot-connector"></div>
+            <div class="dot-text">
+                {{choice.name}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End likert dots -->

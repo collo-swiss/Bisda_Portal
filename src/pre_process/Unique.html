@@ -1,0 +1,69 @@
+<div class="cotainer-fluild p-4">
+    <div class="ui-animate">
+        <div style="opacity: 1; transform: translate(0px, 0px);">
+            <article class="article">
+                <div class="box box-default">
+                    <div class="box-heading">
+                        <h1>Add Custom Fields</h1>
+                    </div>
+                    <div class="box-body demo-style-steps">
+                      <div class="steps-content">
+                            <form name="createProjectForm" class="ant-form ant-form-horizontal">
+                                <div class="ant-row ant-form-item">
+                                    <div class="ant-col-4 ant-form-item-label">
+                                        <label title="Index Field">Index Field</label>
+                                    </div>
+                                    <div class="ant-col-14 ant-form-item-control-wrapper">
+                                        <div class="ant-form-item-control ">
+                                            <input type="text" name="index1" class="ant-input ant-input-lg"
+                                            v-model="custom_fields.index_field1" placeholder="Index Field" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ant-row ant-form-item">
+                                    <div class="ant-col-4 ant-form-item-label">
+                                        <label title="Index Field 2">Index Field 2</label>
+                                    </div>
+                                    <div class="ant-col-14 ant-form-item-control-wrapper">
+                                        <div class="ant-form-item-control ">
+                                            <input type="text" name="index2" class="ant-input ant-input-lg"
+                                            v-model="custom_fields.index_field2" placeholder="Index Field" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ant-row ant-form-item">
+                                    <div class="ant-col-4 ant-form-item-label">
+                                        <label title="Prediction Field">Prediction Field</label>
+                                    </div>
+                                    <div class="ant-col-14 ant-form-item-control-wrapper">
+                                        <div class="ant-form-item-control ">
+                                            <input type="text" name="prediction1" class="ant-input ant-input-lg"
+                                            v-model="custom_fields.prediction_field1" placeholder="Prediction Field" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ant-row ant-form-item">
+                                    <div class="ant-col-4 ant-form-item-label">
+                                        <label title="Prediction Field 2">Prediction Field 2</label>
+                                    </div>
+                                    <div class="ant-col-14 ant-form-item-control-wrapper">
+                                        <div class="ant-form-item-control ">
+                                            <input type="text" name="prediction2" class="ant-input ant-input-lg"
+                                            v-model="custom_fields.prediction_field2" placeholder="Prediction Field" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        <div class="steps-action" ui-view="steps-action">
+                            <button type="button" class="ant-btn ant-btn-primary pull-right" v-on:click.prevent="addFields()">
+                                <span><icon name="save"></icon> Save to continue </span>
+                            </button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+  </div>
+  

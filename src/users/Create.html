@@ -1,0 +1,122 @@
+<div>
+    <!-- Create User Form -->
+    <form role="form" name="createUserForm" class="form-vertical push-up-15" novalidate="false" 
+    autocomplete="off" @submit="checkForm">
+    <p v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li v-for="error in errors">{{ error }}</li>
+            </ul>
+          </p>
+    <div class="row">
+        <div class="col-md-4">
+            <label>First Name</label>
+            <input type="text" name="first_name" class="form-control"
+            v-model="user.first_name" placeholder="First Name" required>
+        </div>
+        <div class="col-md-4">
+            <label>Middle Name</label>
+            <input type="text" name="first_name" class="form-control"
+            v-model="user.middle_name" placeholder="Middle Name">
+        </div>
+        <div class="col-md-4">
+            <label>Last Name</label>
+            <input type="text" name="last_name" class="form-control"
+            v-model="user.last_name" placeholder="Last Name" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>Email address</label>
+            <input type="email"  name="email" class="form-control"
+            v-model="user.email" placeholder="E-mail" required>
+        </div>
+        <div class="col-md-6">
+            <label>Mobile Number</label>
+            <input type="tel" name="mobile" class="form-control"
+            v-model="user.mobile" placeholder="Mobile Number" required>
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-md-6">
+            <label>ID Number</label>
+            <input type="number" name="id_number" class="form-control"
+            v-model="user.id_number" placeholder="ID Number">
+        </div>
+        <div class="col-md-6">
+            <label>Gender</label>
+            <select name="gender" class="form-control" v-model="user.gender">
+                <option v-for="gender in genders" v-bind:value="gender.value">
+                    {{ gender.text }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>Date of Birth</label>
+            <input type="datetime-local" name="dob" class="form-control"
+            v-model="user.dob" placeholder="Date of Birth" required>
+        </div>
+
+        <div class="col-md-6">
+            <label>Nationality</label>
+            <input type="text" name="country" class="form-control"
+            v-model="user.nationality" placeholder="Nationality" required>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-5">
+                <label>Project</label>
+                <select name="project" class="form-control" v-model="user.project">
+                    <option v-for="project in projects" v-bind:value="project.id">
+                        {{ project.company }}
+                    </option>
+                </select>
+            </div> 
+            <div class="col-md-2">
+                <label>Is Admin</label>
+                <input type="checkbox" name="is_admin" class="form-control"
+                v-model="user.is_admin">       
+            </div>
+            <div class="col-md-5">
+                <label>Position</label>
+                <input type="text" name="position" class="form-control"
+                v-model="user.position" placeholder="position" required>
+            </div>
+            
+        </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control"
+            v-model="user.password" placeholder="Password" required>
+        </div>
+
+        <div class="col-md-6">
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password"
+            class="form-control" placeholder="Confirm Password"
+            equals="user.password" v-model="user.confirm_password" required>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <br><br>
+            <button class="btn btn-success" 
+            v-on:click.prevent="createUser()">
+                <icon name="save"></icon>
+                Create User
+            </button>
+        </div>
+    </div>
+    </form>
+    <!-- End Create User Form -->
+</div>

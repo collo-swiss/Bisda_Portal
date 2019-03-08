@@ -1,0 +1,123 @@
+/*
+* Author - Mesongo Collins
+* Started - 29 August 2016 08:22:28
+* Styling for modals only
+* Overrides bootstrap modals
+*/
+
+.modal-content {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-width: 1px;
+    border-color: @border-color;
+}
+
+.modal-header {
+    padding: 10px 10px 10px 15px;
+    line-height: 30px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    background: @page-bg;
+    border-color: #d5d5d5;
+}
+
+.modal-header h4 {
+    margin: 0;
+    line-height: 30px;
+    font-weight: 400;
+    float: left;
+}
+
+.modal-header .close {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.modal-title {
+    line-height: 30px;
+}
+
+.modal-body {
+    padding: 15px;
+    zoom: 1;
+}
+
+.modal-body:before,
+.modal-body:after {
+    content: "";
+    display: table;
+}
+
+.modal-body:after {
+    clear: both;
+}
+
+.modal-footer {
+    text-align: center;
+    padding: 10px 15px;
+    background: @page-bg;
+    border-color: #D5D5D5;
+    border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+}
+
+.change-container {
+    padding: 15px 20px;
+    margin-bottom: 8px;
+    border: 1px solid #CFD6D6;
+    border-radius: 3px;
+}
+
+.change-container:hover {
+    border: 1px solid #6bbdec;
+    background: rgba(207, 231, 250, 0.1);
+}
+
+.change-container.saved-item-container {
+    font-size: 14px;
+    color: #000000;
+    padding: 15px 20px;
+}
+
+.change-container.saved-item-container.selected {
+    border: 1px solid #3b99fc !important;
+    background: rgba(207, 231, 250, 0.17);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0px 3px rgba(82, 168, 236, 0.28);
+}
+
+.change-container.change-container-form:hover {
+    background: none;
+    border: 1px solid #CFD6D6;
+}
+
+.change-container.change-container-form.selected {
+    border: 1px solid #3b99fc !important;
+    background: rgba(207, 231, 250, 0.17);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0px 3px rgba(82, 168, 236, 0.28);
+}
+
+.overview-sheet-link:first-child {
+    margin-left: 10px;
+}
+
+.add-another-item {
+    font-size: 15px;
+    color: #218AD1;
+    padding: 5px 0px 8px;
+}
+
+.checkbox-group {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.modal-top-explain-text {
+    font-size: 15px;
+    padding-bottom: 10px;
+}

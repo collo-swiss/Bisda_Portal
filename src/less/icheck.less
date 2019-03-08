@@ -1,0 +1,27 @@
+/*
+* Author - Mesongo Collins
+* Started - 17 August 2017 15:00:46
+* Styling icheck radios and checkboxes
+*/
+
+.icheck {
+    overflow: hidden;
+
+    .checkbox {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        vertical-align: middle;
+        background: url("../assets/images/icheck.png") no-repeat left;
+        &.checked {
+            background-position: -48px 0;
+        }
+    }
+
+    .label {
+        color: @font-color;
+        font-size: 1.1rem;
+        display: inline-block;
+        padding-top: .75rem;
+    }
+}

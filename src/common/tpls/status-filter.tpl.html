@@ -1,0 +1,24 @@
+<li class="list-filter-item"
+ ng-if="current_user.type==='ADMIN'">
+    <div class="list-filter-item-body">
+        <div class="trigger-full">
+            <div class="list-filter-item-title">
+                Status 
+            </div>
+            <span class="list-filter-item-content">
+                <icheck type="checkbox"
+                ng-true-value="true" ng-false-value="false"
+                ng-model="filters.deleted" ng-change="fixSearch()">
+                    Deleted 
+                </icheck>
+            </span>
+            <span class="list-filter-item-content">
+                <icheck type="checkbox"
+                ng-true-value="false" ng-false-value="true"
+                ng-model="filters.active" ng-change="fixSearch()">
+                    Deactivated 
+                </icheck>
+            </span>
+        </div>
+    </div>
+</li>
