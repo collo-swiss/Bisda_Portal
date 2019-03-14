@@ -10,7 +10,7 @@ export default {
     }
   },
   mounted(){
-    this.checkLoggedIn();
+    // this.checkLoggedIn();
   },
   methods: {
     checkLoggedIn() {

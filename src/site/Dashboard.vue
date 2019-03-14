@@ -14,7 +14,7 @@ export default {
     }
   },
   mounted(){
-    this.checkLoggedIn();
+    // this.checkLoggedIn();
   },
 
   created() {
@@ -39,9 +39,9 @@ export default {
         }
       })
       .then (data =>{
-        console.log(data)
-        this.projects_count = data.body.count
-        this.projects = data.body.results
+        console.log(data.body)
+        this.projects = data.body
+        this.projects_count = this.projects.length
       })
       .catch(error => {
         console.log(error)
@@ -58,7 +58,7 @@ export default {
       })
       .then (data =>{
         console.log(data)
-        this.respondents_count = data.body.count
+        this.respondents_count = data.body.length
       })
       .catch(error => {
         console.log(error)

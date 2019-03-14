@@ -29,7 +29,7 @@ export default {
       })
       .then (data =>{
         console.log(data)
-        this.projects = data.body.results
+        this.projects = data.body
       })
       .catch(error => {
         console.log(error)
@@ -46,7 +46,7 @@ export default {
       })
       .then (data =>{
         console.log(data)
-        this.users = data.body.results
+        this.users = data.body
       })
       .catch(error => {
         console.log(error)

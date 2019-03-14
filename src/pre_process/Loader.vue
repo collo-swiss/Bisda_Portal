@@ -61,7 +61,7 @@ export default {
 
       this.$http({
         method: 'get',
-        url : 'http://localhost:8000/loader/missing_obserrvations/',
+        url : 'http://localhost:8000/loader/missing_observations/',
         withCredentials: true,
         headers: {
           Authorization: `JWT ${this.$store.state.jwt}`,

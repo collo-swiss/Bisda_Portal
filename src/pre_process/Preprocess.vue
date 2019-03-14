@@ -235,7 +235,7 @@ export default {
         }
       })
       .then (data =>{
-        this.distinct_rows = data.body.results[0]
+        this.distinct_rows = data.body[0]
         this.distinct_rows_percentage = (this.distinct_rows.distinct_rows / this.total_count)*100
 
         if (this.distinct_rows_percentage != NaN) {
@@ -257,7 +257,7 @@ export default {
         }
       })
       .then (data =>{
-        this.distinct_ids = data.body.results[0]
+        this.distinct_ids = data.body[0]
         this.distinct_ids_percentage = (this.distinct_ids.distinct_ids / this.distinct_ids.total_ids)*100
         
         if (this.distinct_ids_percentage == NaN) {
@@ -281,10 +281,11 @@ export default {
       })
       .then (data =>{
         console.log(data)
-        this.item = data.body.results[0]
+        this.item = data.body[0]
         
-        this.columns = JSON.parse(this.item.missing_columns)
-        this.tableData = JSON.parse(this.item.missing_data)
+        // this.columns = JSON.parse(this.item.missing_columns)
+        this.columns = this.item.missing_columns
+        // this.tableData = JSON.parse(this.item.missing_data)
         console.log(this.tableData)
 
       })
