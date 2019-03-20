@@ -14,39 +14,39 @@ export default {
       }
     }
   },
-  beforeCreate(){
-    this.$http({
-        method: 'get',
-        url : 'http://localhost:8000/loader/distinct_rows/',
-        withCredentials: true,
-        headers: {
-          Authorization: `JWT ${this.$store.state.jwt}`,
-          'Content-Type': 'application/json'
-        }
-      })
-      .then (data =>{
-        console.log(data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+  // beforeCreate(){
+  //   this.$http({
+  //       method: 'get',
+  //       url : 'http://localhost:8000/loader/pre_process/',
+  //       withCredentials: true,
+  //       headers: {
+  //         Authorization: `JWT ${this.$store.state.jwt}`,
+  //         'Content-Type': 'application/json'
+  //       }
+  //     })
+  //     .then (data =>{
+  //       console.log(data)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
 
-      this.$http({
-        method: 'get',
-        url : 'http://localhost:8000/loader/distinct_ids/',
-        withCredentials: true,
-        headers: {
-          Authorization: `JWT ${this.$store.state.jwt}`,
-          'Content-Type': 'application/json'
-        }
-      })
-      .then (data =>{
-        console.log(data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  },
+  //     this.$http({
+  //       method: 'get',
+  //       url : 'http://localhost:8000/loader/distinct_ids/',
+  //       withCredentials: true,
+  //       headers: {
+  //         Authorization: `JWT ${this.$store.state.jwt}`,
+  //         'Content-Type': 'application/json'
+  //       }
+  //     })
+  //     .then (data =>{
+  //       console.log(data)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // },
   methods: {
     addFields() {
       this.$http.post('http://localhost:8000/projects/custom_fields/', 
@@ -64,6 +64,21 @@ export default {
       })
       .then(function (response) {
         this.$router.push('/');
+        this.$http({
+          method: 'get',
+          url : 'http://localhost:8000/loader/pre_process/',
+          withCredentials: true,
+          headers: {
+            Authorization: `JWT ${this.$store.state.jwt}`,
+            'Content-Type': 'application/json'
+          }
+        })
+        .then (data =>{
+          console.log(data)
+        })
+        .catch(error => {
+          console.log(error)
+        })
       })
       .catch(function (error) {
         console.log(error)
